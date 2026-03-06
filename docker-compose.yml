@@ -1,0 +1,35 @@
+networks:
+  tomcat-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 20.0.0.0/8
+
+services:
+  tomcat32:
+    image: loruski/bpd:apache-tomcat-8.0.32
+    build: ./tomcat32
+    # volumes:
+      # - ./tomcat32/webapps:/apache-tomcat-8.0.32/webapps
+      # - ./jdk1.8.0_451:/jdk
+      # - ./tomcat32/debug.txt:/debug.txt
+      # - ./tomcat32/logs:/apache-tomcat-8.0.32/logs
+    container_name: tomcatBPEL_server
+    networks:
+      tomcat-network:
+        ipv4_address: 20.0.0.10
+    ports:
+      # - 3042:8080
+      - 8080:8080
+  tomcat511:
+    image: loruski/bpd:apache-tomcat-8.5.11
+    build: ./tomcat511
+    volumes:
+      - ./tomcat511/webapps:/apache-tomcat-8.5.11/webapps
+    container_name: tomcatWS_server
+    networks:
+      tomcat-network:
+        ipv4_address: 20.0.0.11
+    ports:
+      # - 3042:8080
+      - 8081:8080
