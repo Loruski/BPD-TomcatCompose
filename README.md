@@ -33,5 +33,6 @@ in the .yaml docker compose file you can customize the mapping of the ports of t
 For the tomcat server for hosting webapps a volume mapping is provided for quickly installing and uninstalling webapps, all you need to do is having the server running and copying/removing webapp files in the tomcat511/webapps directory.
 
 ## Comments
+local container network is defined in the 20.0.0.0/8 address space because... 10.0.0.0/8 and 172.0.0.0/12 private ones for some reason are already being used by my machine... if you get problems on this part try changing it until it works for you
 
 I'll be updating this project whenever changes are needed during my attendance of the course, suggestions and corrections are welcome!
