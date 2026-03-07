@@ -18,6 +18,7 @@ docker compose up --build
 
 and the images will be built from the files in the project.
 
+The tomcat server for BPEL processes already has apache ODE installed
 ## Usage
 Both services are available to be accessed from http://localhost:[port] 
 (see below for ports)
@@ -28,9 +29,10 @@ in the .yaml docker compose file you can customize the mapping of the ports of t
 - the tomcat server for BPEL processes (8.0.32) is mapped on 8080
 - the tomcat server for hosting webapps (8.5.11) is mapped on 8081
 
-### Webapps
+### Volume mapping
 
-For the tomcat server for hosting webapps a volume mapping is provided for quickly installing and uninstalling webapps, all you need to do is having the server running and copying/removing webapp files in the tomcat511/webapps directory.
+As the IDE provided by the professor needs the installation directory of both servers, a volume mapping is provided, you can access their installation path in the *root* directory in both *tomcat32* and *tomcat511* directories.
+Naturally the latter can also be used for quickly installing and uninstalling webapps, all you'd need to do is having the server running and copying/removing webapp files in the tomcat511/root/webapps directory.
 
 ## Comments
 local container network is defined in the 20.0.0.0/8 address space because... 10.0.0.0/8 and 172.0.0.0/12 private ones for some reason are already being used by my machine... if you get problems on this part try changing it until it works for you
