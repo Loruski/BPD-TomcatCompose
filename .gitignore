@@ -1,5 +1,3 @@
-tomcat32/apache-tomcat-8.0.32/temp/
-tomcat32/apache-tomcat-8.0.32/logs
-tomcat511/apache-tomcat-8.5.11/temp/
-tomcat511/apache-tomcat-8.5.11/logs
+tomcat32/apache-tomcat-8.0.32/
+tomcat511/apache-tomcat-8.5.11/
 tomcat32/apache-tomcat-8.0.32/webapps/ode/WEB-INF/
