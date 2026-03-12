@@ -7,7 +7,7 @@ networks:
 
 services:
   tomcat32:
-    # image: loruski/bpd:apache-tomcat-8.0.32
+    image: loruski/bpd:apache-tomcat-8.0.32
     build: ./tomcat32
     volumes:
       - ./tomcat32/apache-tomcat-8.0.32:/apache-tomcat-8.0.32/
@@ -19,7 +19,7 @@ services:
     ports:
       - 8081:8080 # you may edit the first number, the second one is local to the service
   tomcat511:
-    # image: loruski/bpd:apache-tomcat-8.5.11
+    image: loruski/bpd:apache-tomcat-8.5.11
     build: ./tomcat511
     volumes:
       - ./tomcat511/apache-tomcat-8.5.11:/apache-tomcat-8.5.11
